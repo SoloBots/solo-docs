@@ -1,41 +1,13 @@
-# ============================================================================
-#
-# The configuration produced by default is meant to highlight the features
-# that Zensical provides and to serve as a starting point for your own
-# projects.
-#
-# ============================================================================
-
 [project]
-
-# The site_name is shown in the page header and the browser window title
-#
-# Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "Documentation"
-
-# The site_description is included in the HTML head and should contain a
-# meaningful description of the site content for use by search engines.
-#
-# Read more: https://zensical.org/docs/setup/basics/#site_description
+site_name = "Solo-Bots Documentation"
 site_description = "A new project generated from the default template project."
-
-# The site_author attribute. This is used in the HTML head element.
-#
-# Read more: https://zensical.org/docs/setup/basics/#site_author
-site_author = "<your name here>"
+site_author = "Stella Alice Schlotter"
 
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
 # Read more: https://zensical.org/docs/setup/basics/#site_url
 #site_url = "https://www.example.com/"
 
-# The copyright notice appears in the page footer and can contain an HTML
-# fragment.
-#
-# Read more: https://zensical.org/docs/setup/basics/#copyright
-copyright = """
-Copyright &copy; 2026 The authors
-"""
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
 # If you decide not to define a navigation here then Zensical will simply
@@ -44,10 +16,14 @@ Copyright &copy; 2026 The authors
 # can be defined using TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+nav = [
+  {"Home" = [
+    { "Welcome" = "index.md" },
+    { "Getting Started" = [
+      {"Intial Setup" = "setup/setup.md"},
+    ]},
+  ]}
+]
 
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
@@ -215,12 +191,12 @@ features = [
     # When tabs are enabled, top-level sections are rendered in a menu layer
     # below the header for viewports above 1220px, but remain as-is on mobile.
     # https://zensical.org/docs/setup/navigation/#navigation-tabs
-    #"navigation.tabs",
+    "navigation.tabs",
 
     # When sticky tabs are enabled, navigation tabs will lock below the header
     # and always remain visible when scrolling down.
     # https://zensical.org/docs/setup/navigation/#sticky-navigation-tabs
-    #"navigation.tabs.sticky",
+    "navigation.tabs.sticky",
 
     # A back-to-top button can be shown when the user, after scrolling down,
     # starts to scroll up again.
@@ -241,7 +217,7 @@ features = [
     # When anchor following for the table of contents is enabled, the sidebar
     # is automatically scrolled so that the active anchor is always visible.
     # https://zensical.org/docs/setup/navigation/#anchor-following
-    # "toc.follow",
+    "toc.follow",
 
     # When navigation integration for the table of contents is enabled, it is
     # always rendered as part of the navigation sidebar on the left.
@@ -289,11 +265,15 @@ features = [
 # ----------------------------------------------------------------------------
 [[project.theme.palette]]
 scheme = "default"
+primary = "pink"
+accent = "pink"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
 
 [[project.theme.palette]]
 scheme = "slate"
+primary = "purple"
+accent = "purple"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
 
